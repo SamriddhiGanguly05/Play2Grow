@@ -1,0 +1,359 @@
+/* LandingPage.css */
+body {
+    font-family: 'Fredoka', sans-serif;
+    color: #4a4a4a;
+    background-color: #Fdfdfd;
+}
+
+.landing-container {
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.landing-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.landing-logo {
+    height: 150px;
+    /* Increased to be much larger */
+}
+
+/* ... New Nav Links ... */
+.nav-links {
+    display: flex;
+    gap: 40px;
+    /* Increased gap */
+    margin-left: 60px;
+    align-items: center;
+}
+
+/* ... nav-tab styles ... */
+.nav-tab {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: 700;
+    /* Bolder */
+    font-size: 1.2rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* ... existing hover styles ... */
+.nav-tab:hover {
+    color: #535ac8;
+}
+
+.nav-tab::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #FFDAB9;
+    /* Peach */
+    transition: width 0.3s;
+    border-radius: 5px;
+}
+
+.nav-tab:hover::after {
+    width: 100%;
+}
+
+.nav-buttons .btn-login {
+    margin-right: 15px;
+    color: #535ac8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-buttons .btn-primary-soft {
+    background-color: #FFDAB9;
+    /* Peach */
+    color: #d67d3e;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s;
+    border: none;
+}
+
+.nav-buttons .btn-primary-soft:hover {
+    transform: scale(1.05);
+    background-color: #ffcea0;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 5%;
+    /* Reduced padding to give more room */
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    min-height: 85vh;
+    /* Slightly taller */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    /* Prevent spill */
+}
+
+.hero-content {
+    max-width: 40%;
+    /* Reduced width to give image more space */
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    /* Adjusted for balance */
+    font-weight: 800;
+    color: #535ac8;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.hero-image {
+    width: 55%;
+    /* Increased width for the image container */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    width: 100%;
+    /* Force image to take full container width */
+    max-width: 900px;
+    /* Allow it to get quite big */
+    height: auto;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.btn-cta {
+    background-color: #C1E1C1;
+    /* Mint */
+    color: #3b7a3b;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(193, 225, 193, 0.5);
+    transition: all 0.3s;
+    border: none;
+    display: inline-block;
+}
+
+.btn-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(193, 225, 193, 0.7);
+    color: #2a5a2a;
+}
+
+/* Section Common */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FFA07A;
+    /* Light Salmon */
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* Features (Games) */
+.games-section {
+    padding: 80px 10%;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.game-card {
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    border: 2px solid transparent;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: #A7C7E7;
+}
+
+.game-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.game-card h3 {
+    color: #535ac8;
+    margin-bottom: 10px;
+}
+
+/* How It Works */
+.how-section {
+    padding: 80px 10%;
+    background-color: #FFFACD;
+    /* Lemon Chiffon */
+    border-radius: 50px;
+    margin: 0 5%;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step-item {
+    text-align: center;
+    max-width: 300px;
+}
+
+.step-number {
+    background-color: #FFB6C1;
+    /* Light Pink */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+/* Testimonials */
+.testimonials-section {
+    padding: 80px 10%;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonial-card {
+    background: #E6E6FA;
+    /* Lavender */
+    padding: 30px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: #9370DB;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin: 30px 0 20px;
+    color: #555;
+}
+
+.parent-name {
+    font-weight: bold;
+    color: #535ac8;
+    text-align: right;
+}
+
+/* Trust Section */
+.trust-section {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.disclaimer-box {
+    background-color: #FFE4E1;
+    /* Misty Rose */
+    border: 2px dashed #E9967A;
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    max-width: 800px;
+    margin-top: 30px;
+}
+
+/* Footer */
+.landing-footer {
+    background-color: #535ac8;
+    color: white;
+    padding: 40px 10%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        padding: 40px 5%;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .landing-nav {
+        padding: 20px;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
